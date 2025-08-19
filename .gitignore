@@ -1,0 +1,7 @@
+__pycache__/
+.venv/
+data\tokens\*.bin
+data\tokens\*.pkl
+data\tokens\spm.*
+checkpoints\
+checkpoints/
