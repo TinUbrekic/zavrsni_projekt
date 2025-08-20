@@ -5,3 +5,7 @@ data\tokens\*.pkl
 data\tokens\spm.*
 checkpoints\
 checkpoints/
+checkpoints\
+data\tokens\*.bin
+data\tokens\*.pkl
+data\tokens\spm.*
