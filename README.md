@@ -43,7 +43,7 @@ python src/prepare_southpark.py --vocab_size 4000 --val_ratio 0.1
 ### 5. Treniranje modela
 python src/train.py --block_size 256 --batch_size 12 --lr 1e-4 --max_steps 6000 --log_interval 50 --eval_interval 300
 ### 6. Generiranje teksta
-python src/sample.py --out_len 1000
+python src/sample.py --prompt "STAN: Dude, why is Cartman acting so weird?" --temperature 0.7 --top_k 40 --top_p 0.9 --stop_after_chars 1000
 
 ## 4. Primjer korištenja
 ### Početak treniranja
