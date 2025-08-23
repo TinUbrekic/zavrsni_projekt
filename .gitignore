@@ -11,3 +11,4 @@ data/tokens/*.pkl
 data/tokens/spm.*
 
 checkpoints/
+"zavrsni_projekt.bfg-report/" 
