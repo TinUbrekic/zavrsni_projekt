@@ -98,10 +98,10 @@ CARTMAN: You're gonna be at least a little boy who you have to be a little girl!
 CARTMAN: Oh, my God, I'm going to see you.  
 
 ## 5. Specifikacije računala
-**Procesor** - Intel Core i5-8400 @ 2.89 GHz
-**RAM** - 16 GB
-**Grafička kartica** - Nvidia GTX 1050 Ti (nije korištena, model je treniran na CPU)
-###Vrijeme treniranja: Model je trenirao 15000 koraka, batch size je bio 8, a block size 256. Ne početku je learning rate(LR) bio 1e-4, zatim je nakon 1500 koraka smanjen na 3e-5 i tako je bio do 4000 koraka. Od 4000 do 6500 koraka LR je bio 1e-5. Od 6500 do 10000 koraka je LR bio 3e-6, i od 10000 do 15000 je LR bio 1e-7. Vrijeme potrebno za ovo treniranje je bilo između 5 i 6 sati.
+-**Procesor** - Intel Core i5-8400 @ 2.89 GHz
+-**RAM** - 16 GB
+-**Grafička kartica** - Nvidia GTX 1050 Ti (nije korištena, model je treniran na CPU)
+Vrijeme treniranja: Model je trenirao 15000 koraka, batch size je bio 8, a block size 256. Ne početku je learning rate(LR) bio 1e-4, zatim je nakon 1500 koraka smanjen na 3e-5 i tako je bio do 4000 koraka. Od 4000 do 6500 koraka LR je bio 1e-5. Od 6500 do 10000 koraka je LR bio 3e-6, i od 10000 do 15000 je LR bio 1e-7. Vrijeme potrebno za ovo treniranje je bilo između 5 i 6 sati.
 
 ## 6. Rezultati treniranja
 Model je trenirao na korpusu od ~1.4 milijuna tokena(221 epizoda South Parka).
