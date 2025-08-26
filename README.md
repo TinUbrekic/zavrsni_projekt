@@ -47,6 +47,18 @@ Projekt se sastoji od nekoliko dijelova:
   - Primjer:  
     python src/sample.py --prompt "CARTMAN: You guys, seriously." --temperature 0.7 --top_k 50 --top_p 0.9 --stop_after_chars 1500
 
+  ```mermaid
+flowchart TD
+    subgraph DataPrep["Priprema podataka (prepare_southpark.py)"]
+      A[Raw .txt skripte<br/>data/raw/*.txt]
+      B[Čišćenje teksta<br/>• makni scenske upute []/()<br/>• normaliziraj imena<br/>• NAME: rečenica]
+      C[SentencePiece BPE<br/>vocab_size = 4000]
+      D[Tokenizacija → ID-ovi]
+      E[(train.bin, val.bin, meta.pkl)]
+      A --> B --> C --> D --> E
+    end
+    ...
+
 ## 2. Tehnologija
 - Python 3.11
 - PyTorch
