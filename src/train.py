@@ -4,6 +4,7 @@ import numpy as np
 import torch
 from torch.utils.data import Dataset, DataLoader
 from model import GPT, GPTConfig
+import matplotlib.pyplot as plt  
 
 DATA_DIR = Path("data/tokens")
 CKPT_DIR = Path("checkpoints/southpark-gpt-mini")
@@ -32,7 +33,7 @@ def evaluate(model, loader, device):
     losses = []
     for x, y in loader:
         x = x.to(device) #ulazni token
-        y = y.to(device) #sljdeci token za svaku poziciju
+        y = y.to(device) #sljedeci token za svaku poziciju
         _, loss = model(x, y)
         losses.append(loss.item())
         if len(losses) >= 50:
@@ -124,6 +125,9 @@ def main(args):
     global_step = start_step
     t0 = time.time()
 
+    #spremamo loss vrijednosti radi crtanja grafa
+    train_losses, val_losses, val_steps = [], [], []
+
     #treniranje modela, pracenje loss-a, spremanje chekpointa
     for epoch in range(args.epochs):
         for x, y in train_loader:
@@ -134,6 +138,9 @@ def main(args):
             torch.nn.utils.clip_grad_norm_(model.parameters(), 1.0)
             optimizer.step()
             global_step += 1
+
+            train_losses.append(loss.item())  
+
             if global_step % args.log_interval == 0:
                 tok_per_step = args.batch_size * args.block_size
                 dt = time.time() - t0
@@ -141,6 +148,8 @@ def main(args):
                 t0 = time.time()
             if global_step % args.eval_interval == 0:
                 val_loss = evaluate(model, val_loader, device)
+                val_losses.append(val_loss)
+                val_steps.append(global_step)
                 print(f"[eval] step {global_step} | val_loss {val_loss:.3f}")
                 if val_loss < best_val:
                     best_val = val_loss
@@ -174,6 +183,18 @@ def main(args):
         "step": global_step
     }, ckpt_last)
     print(f"[done] saved {ckpt_last}")
+
+    #plot loss funkcije
+    plt.figure()
+    plt.plot(train_losses, label="train_loss", alpha=0.6)
+    plt.plot(val_steps, val_losses, label="val_loss", marker="o")
+    plt.yscale("log")
+    plt.xlabel("Koraci")
+    plt.ylabel("Loss (log)")
+    plt.legend()
+    plt.title("Kretanje train i val loss tijekom treniranja")
+    plt.savefig("loss_plot.png")
+    print("[i] Plot spremljen kao loss_plot.png")
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
