@@ -1,6 +1,7 @@
 __pycache__/
 *.pyc
 *.pyo
+*.pyd
 
 .venv/
 
@@ -12,3 +13,9 @@ data/tokens/spm.*
 
 checkpoints/
 "zavrsni_projekt.bfg-report/" 
+__pycache__/
+.venv/
+data/tokens/*.bin
+data/tokens/*.pkl
+data/tokens/spm.*
+checkpoints/
