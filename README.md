@@ -57,7 +57,7 @@ flowchart TD
       E[(train.bin, val.bin, meta.pkl)]
       A --> B --> C --> D --> E
     end
-    ...
+  ...
 
 ## 2. Tehnologija
 - Python 3.11
