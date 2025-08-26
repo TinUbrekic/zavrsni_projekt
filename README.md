@@ -130,6 +130,7 @@ Nakon završetka treniranja, model je generirao razgovor koji se nalazi u odjelj
 
 ## 8. Tokenizer
 U ovom projektu korišten je SentencePiece s algoritmom BPE za tokenizaciju korpusa South Park epizoda. Tokenizator služi da bi pretvarao tekstualne skripte u numeričke ID-ove koje model može obraditi, zatim za održavanje vokabulara(koji je jednak 4000), čime se smanjuje veličina embedding matrice i ubrzava treniranje.
+
 **Rad tokenizatora**:
 - Tijekom pripreme podataka tokenizeruči vokabular korpusa.
 - Tekst epizoda se pretvara u sekvencu ID-ova i sprema u .bin datoteke za treniranje i validaciju.
