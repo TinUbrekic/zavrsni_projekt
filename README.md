@@ -1,3 +1,5 @@
+Podaci za projekt nabavljeni su sa: https://southpark.fandom.com/wiki/Portal:Scripts
+
 ## 1. Arhitektura
 Projekt se sastoji od nekoliko dijelova:
 - **prepare_southpark.py**
@@ -137,3 +139,6 @@ U ovom projektu korišten je SentencePiece s algoritmom BPE za tokenizaciju korp
 - Tijekom pripreme podataka tokenizeruči vokabular korpusa.
 - Tekst epizoda se pretvara u sekvencu ID-ova i sprema u .bin datoteke za treniranje i validaciju.
 - Tijekom generiranja izlazni ID-ovi se pretvaraju natrag u tekst pomoću SentencePiece modela.
+
+## 9. Clip gradient
+Clip gradient je korišten u projektu kako bi se spriječilo da gradijenti tijekom treniranja postanu preveliki, tj. da model nebi napravio "prevelike korake" te da učenje ne postane nestabilno. Pomoću clip gradienta je norma gradijenta ograničena na maksimalnu vrijednost i time treniranje ostaje stabilno i loss se smanjuje postepeno. 
