@@ -1,3 +1,7 @@
+U ovom projektu napravljen je jezični model koji za dani prompt generira scenarij za epizodu South Parka. 
+Model je treniran na transkriptima epizoda, točnije na transkriptima prvih 17 seozna serije.
+Model je temeljen na arhitekturi transformera, čime je omogućeno učinkovito učenje i generiranje teksta na temelju velikih količina podataka.
+
 Podaci za projekt nabavljeni su sa: https://southpark.fandom.com/wiki/Portal:Scripts
 
 ## 1. Arhitektura
