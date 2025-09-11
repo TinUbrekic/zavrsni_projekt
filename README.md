@@ -27,6 +27,7 @@ Projekt se sastoji od nekoliko dijelova:
 
     4. Izlazni sloj: nakon svih blokova, postoji završni linearni sloj koji svaku reprezentaciju prevodi u vjerojatnosnu distribuciju nad cijelim vokabularom, tj. određuje koji je sljedeći token najvjerojatniji.
  - Parametri modela
+   
   - n_layer = 6 - broj slojeva   
   - n_head = 6 - broj attention glava   
   - n_embd = 384 - dimenzija vektora ugradnje  
@@ -35,6 +36,7 @@ Projekt se sastoji od nekoliko dijelova:
 
 
 - **train.py**
+  
  - Batching:  
     - Iz train.bin uzimaju se maksimalne duljine sekvence dužine block_size.  
     - Ulaz x su prvih T tokena, cilj y je x pomaknut za 1 token (predviđanje sljedećeg tokena).
