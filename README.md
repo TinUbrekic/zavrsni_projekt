@@ -147,8 +147,10 @@ U ovom projektu korišten je SentencePiece s algoritmom BPE za tokenizaciju korp
 Clip gradient je korišten u projektu kako bi se spriječilo da gradijenti tijekom treniranja postanu preveliki, tj. da model nebi napravio "prevelike korake" te da učenje ne postane nestabilno. Pomoću clip gradienta je norma gradijenta ograničena na maksimalnu vrijednost i time treniranje ostaje stabilno i loss se smanjuje postepeno. 
 
 ## 10. Usporedba modela
-Tijekom treniranja su spremljena 2 modela. Prvi model je došao do 4500 koraka, dok je drugi model došao do 15000 koraka. 
+Tijekom treniranja su spremljena 2 modela. Prvi model je došao do 4500 koraka, dok je drugi model došao do 15000 koraka.
+
 Oba modela su pokrenuta na sljedećem promptu: python src\sample.py --prompt "STAN: Dude, why is Cartman acting so weird?" --temperature 0.7 --top_k 40 --top_p 0.9 --stop_after_chars 1000
+
 Usporedba generiranja skripte 2 modela:
 1. Model od 4500 koraka
    
