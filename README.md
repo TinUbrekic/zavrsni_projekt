@@ -34,16 +34,16 @@ Projekt se sastoji od nekoliko dijelova:
   - dropout = 0.2 - regularizacija   
 
 - **train.py**
- - Batching:  
-    - Iz train.bin uzimaju se maksimalne duljine sekvence dužine block_size.  
-    - Ulaz x su prvih T tokena, cilj y je x pomaknut za 1 token (predviđanje sljedećeg tokena).
-  - Cilj (loss): Koristi se Cross-Entropy Loss.
-  - Optimizator: Koristi se AdamW optimizator.
-  - Praćenje i validacija:  
-    - loss se ispisuje svakih 50 koraka  
-    - val_loss se računa na val_loader periodično (svakih 300 koraka) uz @torch.no_grad().  
-    - Sprema se model-best.pt (najniži val_loss) i model-last.pt (zadnji korak), zajedno s konfiguracijom i korakom (step) radi nastavka treniranja.
-  - Sekvenca za učenje: block_size = 256 definira maksimalni broj tokena iz povijesti koje model vidi pri predikciji.
+   - Batching:  
+      - Iz train.bin uzimaju se maksimalne duljine sekvence dužine block_size.  
+      - Ulaz x su prvih T tokena, cilj y je x pomaknut za 1 token (predviđanje sljedećeg tokena).
+    - Cilj (loss): Koristi se Cross-Entropy Loss.
+    - Optimizator: Koristi se AdamW optimizator.
+    - Praćenje i validacija:  
+      - loss se ispisuje svakih 50 koraka  
+      - val_loss se računa na val_loader periodično (svakih 300 koraka) uz @torch.no_grad().  
+      - Sprema se model-best.pt (najniži val_loss) i model-last.pt (zadnji korak), zajedno s konfiguracijom i korakom (step) radi nastavka treniranja.
+    - Sekvenca za učenje: block_size = 256 definira maksimalni broj tokena iz povijesti koje model vidi pri predikciji.
 
 - **sample.py**
   - Učitava checkpoint i meta.pkl, kreira model i enkoder/dekoder iz SentencePiece modela.
