@@ -85,7 +85,7 @@ python src/train.py --block_size 256 --batch_size 12 --lr 1e-4 --max_steps 10000
 python src/sample.py --clean --prompt "CARTMAN:You guys seriously" --temperature 0.7 --top_k 50 --top_p 0.9 --stop_after_chars 1500
 
 **Primjer outputa:**
-STAN: Dude, why is Cartman acting so weird?  
+CARTMAN: You guys seriously  
 KYLE: [the other boys rush up to the house] You're not gonna do it.  
 KYLE: [whispers] I don't know how much is that?  
 CARTMAN: Uh, I guess I think you've been a pretty good idea. [turns and walks away]  
